@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^29.1.4"
-  }
+    "electron-prebuilt-compile": "29.1.4"
+  },
+  "dependencies": {}
 }
