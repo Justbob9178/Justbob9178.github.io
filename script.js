@@ -8,7 +8,7 @@ async function getAnimal(){
 }
 
 async function refreshPicture(){
-    await document.getElementById('image').setAttribute('src', "assets/loading.gif")
+    document.getElementById('image').setAttribute('src', "assets/loading.gif")
     data = await fetch(url);
     response = await data.json()
     document.getElementById('image').setAttribute('src', response[0].url)
@@ -45,7 +45,7 @@ async function dogPress(){
 }
 
 async function updateURL(currentAnimal){
-    url = 'https://api.the' + currentAnimal + 'api.com/v1/images/search'
+    url = 'https://api.the' + currentAnimal + 'api.com/v1/images/search?api_key=YOUR_API_KEY'
     return url;
 }
 
