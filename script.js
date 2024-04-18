@@ -1,58 +1,110 @@
-async function getAnimal(){
-    updateURL(currentAnimal)
-    data = await fetch(url);
-    response = await data.json()
-    document.getElementById('image').setAttribute('src', response[0].url)
-    document.getElementById('image').style.width = '50%'
-    document.getElementById('image').style.height = '50%'
-}
-
 async function refreshPicture(){
     document.getElementById('image').setAttribute('src', "assets/loading.gif")
-    data = await fetch(url);
+    data = await fetch(await updateURL());
     response = await data.json()
+    console.log(response)
+
     document.getElementById('image').setAttribute('src', response[0].url)
     document.getElementById('image').style.width = '50%'
     document.getElementById('image').style.height = '50%'
+
+    if(response[0].breeds != undefined){
+        useme = response[0].breeds[0]
+        document.getElementById('breed').innerHTML = 'breed : ' + useme.name
+        document.getElementById('weight').innerHTML = 'weight : ' + useme.weight.metric + ' kg'
+        document.getElementById('life-span').innerHTML = 'life span : ' + useme.life_span + ' years'
+        document.getElementById('origin').innerHTML = 'country of origin : ' + useme.origin
+    } else {document.getElementById('breed').innerHTML = 'dog breed searching + info comming soon :)'; document.getElementById('weight').innerHTML = ''; document.getElementById('life-span').innerHTML = ''; document.getElementById('origin').innerHTML = ''}
 }
 
 async function catPress(){
-    currentAnimal = 'cat'
     catElement = document.getElementById('catBut')
     dogElement = document.getElementById('dogBut')
     animalElement = document.getElementById('animal')
 
     catElement.style.backgroundColor = 'green'
+    catElement.setAttribute('selected', "true")
     dogElement.style.backgroundColor = 'red'
-
-    await updateURL(currentAnimal)
-
-    animalElement.innerHTML = String(currentAnimal)
+    dogElement.setAttribute('selected', "false")
 }
 
 async function dogPress(){
-    currentAnimal = 'dog'
     catElement = document.getElementById('catBut')
     dogElement = document.getElementById('dogBut')
     animalElement = document.getElementById('animal')
 
     catElement.style.backgroundColor = 'red'
+    catElement.setAttribute('selected', "false")
     dogElement.style.backgroundColor = 'green'
-
-    await updateURL(currentAnimal)
-
-    animalElement.innerHTML = String(currentAnimal)
+    dogElement.setAttribute('selected', "true")
 }
 
-async function updateURL(currentAnimal){
-    url = 'https://api.the' + currentAnimal + 'api.com/v1/images/search?api_key=YOUR_API_KEY'
+async function updateURL(){
+    upcat()
+    updog()
+    var catback =  document.getElementById('catBut').getAttribute("selected")
+    console.log(catback)
+    if(catback == 'true'){
+        currentAnimal = 'cat'
+        console.log('cat')
+    } else if(catback == 'false'){
+        currentAnimal = 'dog'
+        console.log('notcat')
+    }
+
+    if(document.getElementById('breedid').innerHTML){
+        if(document.getElementById('catbreedbutton').checked){
+            var breedidnum = document.getElementById('breedid').innerHTML
+            query = 'breed_ids=' + breedidnum + '&'
+    }} else query = ''
+
+    let url = 'https://api.the' + currentAnimal + 'api.com/v1/images/search?' + query + 'has_breeds=1&api_key=live_3Xd3R1izcqe3W9xSAJLgTYG8i1YnjNYp6w2XStz01stsklM7vfzbnrr2BIkJoaV9'
+    console.log(url)
     return url;
 }
 
+async function updog() {
+    if(document.getElementById('dogbreedbutton').checked){
+        var select = document.getElementById('dog');
+        var option = select.options[select.selectedIndex];
+        document.getElementById('breedid').innerHTML = option.value;
+        document.getElementById('breedname').innerHTML = String(select)
+}}
+
+async function upcat() {
+    if(document.getElementById('catbreedbutton').checked){
+        var select = document.getElementById('cat');
+        var option = select.options[select.selectedIndex];
+        document.getElementById('breedid').innerHTML = option.value;
+        document.getElementById('breedname').innerHTML = String(select)
+}}
+
+async function catcheck(){
+    if(document.getElementById('catbreedbutton').checked){
+        console.log('checked')
+        document.getElementById('cat').style.visibility = "visible";
+    }else {
+        console.log('unchecked')
+        document.getElementById('cat').style.visibility = "hidden";
+    }
+}
+
+async function dogcheck(){
+    if(document.getElementById('dogbreedbutton').checked){
+        console.log('checked')
+        document.getElementById('dog').style.visibility = "visible";
+    }else {
+        console.log('unchecked')
+        document.getElementById('dog').style.visibility = "hidden";
+    }
+}
+
 let data = ''
-let currentAnimal = 'cat'
 
+setTimeout(function(){
+    refreshPicture()
+}, 100)
 
+//upcat();
 
-
-getAnimal()
+//updog()

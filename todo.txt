@@ -1,1 +1,3 @@
-add info about the cat or dog (breed) https://developers.thecatapi.com/view-account/ylX4blBYT9FaoVd6OhvR?report=bOoHBz-8t#getting-one-image-by-id
+dog breeds
+if both breeds selected the website will not load 
+make things from one animal dissapear when the other animal is selected i will forget what this means 
