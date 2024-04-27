@@ -14,7 +14,10 @@ async function refreshPicture(){
         document.getElementById('weight').innerHTML = 'weight : ' + useme.weight.metric + ' kg'
         document.getElementById('life-span').innerHTML = 'life span : ' + useme.life_span + ' years'
         document.getElementById('origin').innerHTML = 'country of origin : ' + useme.origin
-    } else {document.getElementById('breed').innerHTML = 'dog breed searching + info comming soon :)'; document.getElementById('weight').innerHTML = ''; document.getElementById('life-span').innerHTML = ''; document.getElementById('origin').innerHTML = ''}
+    } else {document.getElementById('breed').innerHTML = 'dog breed searching + info comming soon :)'; 
+    document.getElementById('weight').innerHTML = ''; 
+    document.getElementById('life-span').innerHTML = ''; 
+    document.getElementById('origin').innerHTML = ''}
 }
 
 async function catPress(){
