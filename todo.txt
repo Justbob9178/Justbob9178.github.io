@@ -1,6 +1,8 @@
-cat + dog
 dog breeds
 if both breeds selected the website will not load 
+make things from one animal dissapear when the other animal is selected i will forget what this means 
 
-password
-password will not always be the set amount of characters long
+free api key for me 
+live_pGPtu252IVJfrslX8KvUkqhFOmid15pf8qL7r2PqXiPlnEwYzg7JWGC2MZdwTW4u
+
+password generator

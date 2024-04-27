@@ -14,10 +14,7 @@ async function refreshPicture(){
         document.getElementById('weight').innerHTML = 'weight : ' + useme.weight.metric + ' kg'
         document.getElementById('life-span').innerHTML = 'life span : ' + useme.life_span + ' years'
         document.getElementById('origin').innerHTML = 'country of origin : ' + useme.origin
-    } else {document.getElementById('breed').innerHTML = 'dog breed searching + info comming soon :)'; 
-    document.getElementById('weight').innerHTML = ''; 
-    document.getElementById('life-span').innerHTML = ''; 
-    document.getElementById('origin').innerHTML = ''}
+    } else {document.getElementById('breed').innerHTML = 'dog breed searching + info comming soon :)'; document.getElementById('weight').innerHTML = ''; document.getElementById('life-span').innerHTML = ''; document.getElementById('origin').innerHTML = ''}
 }
 
 async function catPress(){
@@ -61,7 +58,7 @@ async function updateURL(){
             query = 'breed_ids=' + breedidnum + '&'
     }} else query = ''
 
-    let url = 'https://api.the' + currentAnimal + 'api.com/v1/images/search?' + query + 'has_breeds=1&api_key=live_3Xd3R1izcqe3W9xSAJLgTYG8i1YnjNYp6w2XStz01stsklM7vfzbnrr2BIkJoaV9'
+    let url = 'https://api.the' + currentAnimal + 'api.com/v1/images/search?' + query + 'has_breeds=1&api_key=live_pGPtu252IVJfrslX8KvUkqhFOmid15pf8qL7r2PqXiPlnEwYzg7JWGC2MZdwTW4u'
     console.log(url)
     return url;
 }
