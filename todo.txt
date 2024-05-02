@@ -1,15 +1,6 @@
 cat + dog
 dog breeds
 if both breeds selected the website will not load 
-<<<<<<< HEAD
 
 password
 password will not always be the set amount of characters long
-=======
-make things from one animal dissapear when the other animal is selected i will forget what this means 
-
-free api key for me 
-live_pGPtu252IVJfrslX8KvUkqhFOmid15pf8qL7r2PqXiPlnEwYzg7JWGC2MZdwTW4u
-
-password generator
->>>>>>> 8910292807a0d06d6964f66659d2e3da2b1428e3
