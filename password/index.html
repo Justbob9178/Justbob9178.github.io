@@ -6,6 +6,7 @@
     <title>password generator</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div id="links">
@@ -13,13 +14,33 @@
     </div>
     <div id="content">
             <h3 id="length">length (1-50):</h3>
-            <h5>recomended length of 10</h5>
-            <input type="number" id="number" min="1" max="50" onsubmit="generatepass()"><br>
-            <button id="generate" onclick="generatepass()" type="button">generate password</button>
-            <h2 id="output"></h2>
+            <h5 id="info">recomended length of 15</h5>
+            <h3 id="lengthnum"></h3>
+            <input id="number" type="range" min="1" max="50" value="25" onsubmit="generatepass()"><br>
+            <!--<button id="generate" onclick="generatepass()" type="button">generate password</button> -->
+            <h2 id="output">Please generate a password</h2> 
+            <button id="copy" onclick="copy()">Copy 🗐</button>
 
             
     </div>
 
+
+<script>
+    // self executing function here
+    (function() {
+        generatepass()
+        
+        const value = document.querySelector("#lengthnum");
+        const input = document.getElementById('number');
+        console.log(input)
+        value.textContent = input.value;
+        console.log(input.value)
+        document.querySelector("#number").addEventListener("input", (event) => {
+            console.log(input.value)
+            value.textContent = event.target.value;
+            generatepass()
+        });
+    })();
+    </script>
 </body>
 </html>

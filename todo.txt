@@ -3,4 +3,4 @@ dog breeds
 if both breeds selected the website will not load 
 
 password
-password will not always be the set amount of characters long
+copy button
