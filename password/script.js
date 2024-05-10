@@ -1,5 +1,5 @@
 function makeid(length) {
-  console.log('correct input')
+  //console.log('correct input')
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!"£$%^&*()-=_+';
     const charactersLength = characters.length;
@@ -20,7 +20,7 @@ function makeid(length) {
 
 function generatepass() {
     var element = document.getElementById("number").value;
-    console.log(element)
+    //console.log(element)
     if(element > 0 && element < 51){
         makeid(parseInt(document.getElementById("number").value))
     } else {
@@ -32,7 +32,7 @@ function generatepass() {
 function copy() {
   // Get the text field
   var copyText = document.getElementById("output");
-  console.log(copyText)
+  //console.log(copyText)
 
    // Copy the text inside the text field
   navigator.clipboard.writeText(copyText.innerHTML);

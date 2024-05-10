@@ -3,4 +3,3 @@ dog breeds
 if both breeds selected the website will not load 
 
 password
-copy button

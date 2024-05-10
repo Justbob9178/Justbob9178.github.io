@@ -11,9 +11,13 @@
     top:  50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    border-style: solid;
+    padding: 100px;
+    border-radius: 20px ;
+    background-color: #f47696;
 }
 
-#length,#info,#lengthnum,#number,#generate,#output,#copy{
+#length,#info,#lengthnum,#number,#generate,#done{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -22,15 +26,40 @@
 
 #number{
     margin: auto;
-
+    cursor: pointer;
 }
 
 #generate{
     margin: auto;
 }
 
+#output{
+    padding-right: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+
+#done{
+    border-style: solid;
+    border-radius: 10px;
+    background-color: #76f4f4;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
 #copy{
     margin: auto;
+    background-color: #96f476;
+    cursor: pointer;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: larger;
 }
 
 
@@ -38,13 +67,3 @@ body{
     background-color: #7575f4;
 }
 
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}

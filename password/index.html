@@ -10,16 +10,20 @@
 </head>
 <body>
     <div id="links">
-        <a href="/index.html" style="color: black;">cat and dog generator</a>  <a href="/password/index.html" style="color: black">password generator</a><br><br><br>
+        <a href="../cat/" style="color: black;">Cat And Dog Generator</a>  
+        <a href="../password/" style="color: black">Password Generator</a>
+        <a href="../minecraft/" style="color: black;">Minecraft</a>
     </div>
     <div id="content">
-            <h3 id="length">length (1-50):</h3>
+            <h3 id="length">Length (1-50):</h3>
             <h5 id="info">recomended length of 15</h5>
             <h3 id="lengthnum"></h3>
             <input id="number" type="range" min="1" max="50" value="25" onsubmit="generatepass()"><br>
-            <!--<button id="generate" onclick="generatepass()" type="button">generate password</button> -->
-            <h2 id="output">Please generate a password</h2> 
-            <button id="copy" onclick="copy()">Copy 🗐</button>
+            <div id="done">
+                <h2 id="output">Please generate a password</h2> 
+                <button id="copy" onclick="copy()">🗐</button>
+            </div>
+          
 
             
     </div>
